@@ -1,0 +1,63 @@
+<header>
+  <h2>header</h2>
+</header>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/styles/style.css">
+  <title>Express App</title>
+</head>
+<body>
+  <%- include('partials/header') %&gt;
+  <h1>Welcome to Express App!</h1>
+  <a href="/students">View Students</a>
+  <%- include('partials/footer') %&gt;
+</body>
+</html>
+<!DOCTYPE html&gt;
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/styles/style.css">
+  <title>Students</title>
+</head>
+<body>
+  <%- include('../partials/header') %&gt;
+  <h1>Student List</h1>
+  <ul>
+    <% students.forEach(student =&gt; { %>
+      <li>
+        <a href="/students/<%= student.id %>">
+          <%= student.name %&gt;
+        </a>
+      </li>
+    <% }); %&gt;
+  </ul>
+  <%- include('../partials/footer') %&gt;
+</body>
+</html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/styles/style.css">
+  <title>Student Details</title>
+</head>
+<body>
+  <%- include('../partials/header') %&gt;
+  <h1>Student Details</h1>
+  <% if (student) { %>
+    <p>ID: <%= student.id %&gt;</p>
+    <p>Name: <%= student.name %&gt;</p>
+  <% } else { %>
+    <p>Student not found.</p>
+  <% } %&gt;
+  <%- include('../partials/footer') %&gt;
+</body>
+</html>
+<footer>
+  <p>&copy; 2023 Express App</p>
+</footer>
